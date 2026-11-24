@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Eye, X } from 'lucide-react';
+import { Eye, X } from 'lucide-react';
 
 export const PortfolioSection = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -62,8 +62,7 @@ export const PortfolioSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-gold-600 font-semibold">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="text-xs uppercase tracking-widest text-gold-600 font-semibold">
             <span>Visual Gallery</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl text-espresso-950 font-normal tracking-tight">

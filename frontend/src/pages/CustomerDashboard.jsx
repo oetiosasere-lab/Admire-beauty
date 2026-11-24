@@ -290,14 +290,7 @@ export const CustomerDashboard = ({ onOpenBooking }) => {
                       )}
                     </div>
 
-                    <div className="pt-3 border-t border-champagne-100 flex items-center justify-between text-xs">
-                      <div>
-                        <span className="text-taupe-500">Service Fee: </span>
-                        <strong className="text-espresso-950 font-serif text-base">
-                          £{parseFloat(booking.services?.price || 0).toFixed(2)}
-                        </strong>
-                      </div>
-
+                    <div className="pt-3 border-t border-champagne-100 flex items-center justify-end text-xs">
                       {booking.status === 'pending' && (
                         <button
                           onClick={() => handleCancelBooking(booking.id)}

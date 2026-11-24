@@ -4,7 +4,6 @@ import { useAuth } from '../../context/AuthContext';
 import {
   Calendar as CalendarIcon,
   Clock,
-  Sparkles,
   ArrowRight,
   ArrowLeft,
   CheckCircle2,
@@ -256,9 +255,6 @@ export const BookingModal = ({ isOpen, onClose, preselectedService }) => {
                           <h4 className="font-serif text-lg font-medium text-espresso-950">
                             {srv.name}
                           </h4>
-                          <span className="text-sm font-semibold text-espresso-900">
-                            £{parseFloat(srv.price).toFixed(2)}
-                          </span>
                         </div>
                         <p className="text-xs text-taupe-600 line-clamp-2">
                           {srv.description}
@@ -291,9 +287,6 @@ export const BookingModal = ({ isOpen, onClose, preselectedService }) => {
                   <strong className="text-espresso-900">{selectedService?.name}</strong>
                   <span className="text-taupe-500 ml-2">({selectedService?.duration} mins)</span>
                 </div>
-                <span className="font-semibold text-espresso-950">
-                  £{parseFloat(selectedService?.price || 0).toFixed(2)}
-                </span>
               </div>
 
               {/* Date Input */}
@@ -371,10 +364,6 @@ export const BookingModal = ({ isOpen, onClose, preselectedService }) => {
                   <strong className="text-espresso-900">
                     {selectedDate} at {selectedSlot?.startTime} (until {selectedSlot?.endTime})
                   </strong>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-taupe-500">Total Price:</span>
-                  <strong className="text-gold-700">£{parseFloat(selectedService?.price || 0).toFixed(2)}</strong>
                 </div>
               </div>
 
@@ -505,12 +494,6 @@ export const BookingModal = ({ isOpen, onClose, preselectedService }) => {
                   <span className="text-taupe-500">Client Email:</span>
                   <span className="text-espresso-900">{confirmedBooking.email}</span>
                 </div>
-                <div className="flex justify-between pt-1">
-                  <span className="text-taupe-500">Estimated Total:</span>
-                  <span className="font-serif text-lg font-bold text-espresso-950">
-                    £{parseFloat(selectedService?.price || 0).toFixed(2)}
-                  </span>
-                </div>
               </div>
 
               <div className="pt-2">
@@ -558,7 +541,6 @@ export const BookingModal = ({ isOpen, onClose, preselectedService }) => {
                 className="py-2.5 px-6 rounded-full bg-espresso-900 hover:bg-espresso-950 text-cream-50 text-xs font-semibold uppercase tracking-wider transition-all flex items-center gap-2 disabled:opacity-50"
               >
                 {submitting ? 'Submitting...' : 'Confirm Reservation'}
-                <Sparkles className="w-3.5 h-3.5 text-gold-400" />
               </button>
             )}
           </div>

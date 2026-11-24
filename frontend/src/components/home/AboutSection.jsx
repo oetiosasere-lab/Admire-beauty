@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Heart, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export const AboutSection = ({ onOpenBooking }) => {
   return (
@@ -32,8 +32,7 @@ export const AboutSection = ({ onOpenBooking }) => {
 
           {/* Authentic Story Column */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-gold-600 font-semibold">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="text-xs uppercase tracking-widest text-gold-600 font-semibold">
               <span>The Journey & Passion</span>
             </div>
 

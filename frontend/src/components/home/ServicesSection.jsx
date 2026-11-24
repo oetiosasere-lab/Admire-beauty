@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { api } from '../../services/api';
-import { Clock, ArrowRight, Sparkles } from 'lucide-react';
+import { Clock, ArrowRight } from 'lucide-react';
 
 export const ServicesSection = ({ onSelectService }) => {
   const [services, setServices] = useState([]);
@@ -15,13 +15,11 @@ export const ServicesSection = ({ onSelectService }) => {
         }
       } catch (err) {
         console.warn('Using default services list:', err);
-        // Fallback default services per spec
         setServices([
           {
             id: 'srv-bridal',
             name: 'Bridal Makeup',
             description: 'Timeless, luminous bridal artistry crafted to perfection. Includes skin prep, custom lash styling, luxury long-wear complexion, and bridal touch-up kit.',
-            price: 220.00,
             duration: 120,
             image_url: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80',
           },
@@ -29,7 +27,6 @@ export const ServicesSection = ({ onSelectService }) => {
             id: 'srv-birthday',
             name: 'Birthday Glam',
             description: 'Celebrate in radiant luxury. Dramatic or soft sultry glam tailored to your birthday outfit and aesthetic. Includes sculpted contouring and high-impact lash artistry.',
-            price: 120.00,
             duration: 90,
             image_url: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80',
           },
@@ -37,7 +34,6 @@ export const ServicesSection = ({ onSelectService }) => {
             id: 'srv-photoshoot',
             name: 'Photoshoot Makeup',
             description: 'High-definition editorial makeup optimized for studio flash and natural sunlight. HD anti-flashback complexions, precise sculpting, and flawless camera finish.',
-            price: 150.00,
             duration: 100,
             image_url: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80',
           },
@@ -45,7 +41,6 @@ export const ServicesSection = ({ onSelectService }) => {
             id: 'srv-fullglam',
             name: 'Full Glam',
             description: 'Unapologetic drama and elegance. Smokey eyes, cut-crease artistry, velvet lips, and radiant highlight designed for red carpet events and milestone evenings.',
-            price: 135.00,
             duration: 90,
             image_url: 'https://images.unsplash.com/photo-1503236823255-94609f598e71?auto=format&fit=crop&w=1200&q=80',
           },
@@ -63,8 +58,7 @@ export const ServicesSection = ({ onSelectService }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-gold-600 font-semibold">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="text-xs uppercase tracking-widest text-gold-600 font-semibold">
             <span>Curated Offerings</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl text-espresso-950 font-normal tracking-tight">
@@ -98,11 +92,9 @@ export const ServicesSection = ({ onSelectService }) => {
 
                 {/* Content */}
                 <div className="p-6 space-y-3">
-                  <div className="flex items-baseline justify-between gap-2">
-                    <h3 className="font-serif text-xl sm:text-2xl font-medium text-espresso-950">
-                      {service.name}
-                    </h3>
-                  </div>
+                  <h3 className="font-serif text-xl sm:text-2xl font-medium text-espresso-950">
+                    {service.name}
+                  </h3>
 
                   <p className="text-xs sm:text-sm text-taupe-600 leading-relaxed line-clamp-3">
                     {service.description}
@@ -110,20 +102,13 @@ export const ServicesSection = ({ onSelectService }) => {
                 </div>
               </div>
 
-              {/* Price and Action Footer */}
+              {/* Action Footer (No price displayed) */}
               <div className="p-6 pt-0 border-t border-champagne-100 mt-4 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] uppercase tracking-wider text-taupe-500 block">Starting from</span>
-                  <span className="font-serif text-2xl font-semibold text-espresso-900">
-                    £{parseFloat(service.price).toFixed(2)}
-                  </span>
-                </div>
-
                 <button
                   onClick={() => onSelectService(service)}
-                  className="py-2.5 px-4 rounded-full bg-espresso-900 group-hover:bg-gold-500 text-cream-50 group-hover:text-espresso-950 text-xs font-semibold uppercase tracking-wider transition-all flex items-center gap-1.5"
+                  className="w-full py-2.5 px-4 rounded-full bg-espresso-900 group-hover:bg-gold-500 text-cream-50 group-hover:text-espresso-950 text-xs font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-1.5"
                 >
-                  <span>Book</span>
+                  <span>Book Appointment</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

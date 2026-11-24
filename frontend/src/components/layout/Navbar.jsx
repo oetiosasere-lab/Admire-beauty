@@ -58,7 +58,7 @@ export const Navbar = ({ onOpenBooking }) => {
               Admire Beauty
             </span>
             <span className="text-[10px] uppercase tracking-[0.25em] text-taupe-500 font-medium -mt-1">
-              Haute Artistry & Studio
+              Makeup Artistry & Studio
             </span>
           </Link>
 
